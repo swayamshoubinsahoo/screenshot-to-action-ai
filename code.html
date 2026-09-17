@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Screenshot Detail &amp; Action View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#2d3449",
+                      "surface-container-high": "#222a3d",
+                      "on-primary-fixed": "#07006c",
+                      "surface-tint": "#c0c1ff",
+                      "on-tertiary-fixed": "#002113",
+                      "background": "#0b1326",
+                      "on-tertiary": "#003824",
+                      "secondary-fixed": "#d4e4fa",
+                      "surface-container-low": "#131b2e",
+                      "on-error-container": "#ffdad6",
+                      "error": "#ffb4ab",
+                      "on-surface": "#dae2fd",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "outline-variant": "#464554",
+                      "on-background": "#dae2fd",
+                      "secondary-container": "#39485a",
+                      "on-error": "#690005",
+                      "surface-container-lowest": "#060e20",
+                      "on-tertiary-container": "#000703",
+                      "on-primary": "#1000a9",
+                      "error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#39485a",
+                      "inverse-primary": "#494bd6",
+                      "inverse-surface": "#dae2fd",
+                      "secondary": "#b9c8de",
+                      "tertiary-container": "#00885d",
+                      "on-secondary-container": "#a7b6cc",
+                      "surface-dim": "#0b1326",
+                      "surface-bright": "#31394d",
+                      "primary-fixed": "#e1e0ff",
+                      "on-secondary": "#233143",
+                      "primary-container": "#8083ff",
+                      "surface": "#0b1326",
+                      "secondary-fixed-dim": "#b9c8de",
+                      "outline": "#908fa0",
+                      "on-secondary-fixed": "#0d1c2d",
+                      "primary": "#c0c1ff",
+                      "primary-fixed-dim": "#c0c1ff",
+                      "on-primary-container": "#0d0096",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "surface-container-highest": "#2d3449",
+                      "tertiary-fixed": "#6ffbbe",
+                      "on-primary-fixed-variant": "#2f2ebe",
+                      "inverse-on-surface": "#283044",
+                      "surface-container": "#171f33",
+                      "on-surface-variant": "#c7c4d7",
+                      "tertiary": "#4edea3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base-unit": "4px",
+                      "gutter-grid": "16px",
+                      "margin-mobile": "20px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "stack-lg": "32px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "mono-action": [
+                              "Geist"
+                      ],
+                      "headline-sm": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "mono-action": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-card {
+            background: rgba(19, 27, 46, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-overlay {
+            background: rgba(19, 27, 46, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 border-b border-white/10 shadow-none bg-background/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full">
+<div class="flex items-center gap-4 cursor-pointer hover:opacity-80 active:scale-95 transition-all">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A small, stylized avatar portrait of a user in a dark mode UI context, sleek and modern, deep blues and purples, professional and polished look, 80px by 80px." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz_gS-tUMqweWBXgjVIiNVxmveTeRjuteEB6FntapQ0IU5yuk1n5z_xP3Q3GxEexdd7VYuQx6yls1JDriDLOaCDqDWrBWWrpHQo6ByrpTaNU-Gjio1A-WrHCPylBcsp9jkj34dj9GCOM1cM4J6qaYvFAppXT4gxWEMRmdsDA9-gBN8WLo6rTEHSNqkTfMOKEnp4U0X3aD-AiJrvTQNUC6w7-0neQd8z4utUAJus4RzYTaPHicXwYgqAg"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Screenshot → Action</h1>
+</div>
+<button aria-label="Search" class="text-primary hover:opacity-80 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+<!-- Progress Indicator -->
+<div class="w-full h-[2px] bg-surface-container-high">
+<div class="h-full bg-gradient-to-r from-primary to-tertiary w-full origin-left animate-[pulse_2s_ease-in-out_infinite]"></div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-[100px] px-margin-mobile max-w-3xl mx-auto flex flex-col gap-stack-lg">
+<!-- Upper Section: Interactive Preview -->
+<section class="flex flex-col gap-stack-sm relative z-10">
+<div class="glass-card rounded-[16px] p-base-unit relative group overflow-hidden">
+<div class="relative rounded-[12px] overflow-hidden w-full aspect-[4/3] sm:aspect-video">
+<img class="w-full h-full object-cover" data-alt="A digital concert ticket displayed on a mobile screen, sleek dark UI with vibrant neon accents, high resolution, clear typography showing Arctic Monkeys, O2 London, glowing aesthetic, futuristic concert vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc73Jx3xNrAbDkcqZNEZYUVLjO1x78NNpkudu7j2j-bSz7KmVKW6QxOqZQY28AHAnKO4EIpISQWQTYjqdIU_agsozaCezgBhivq2b0nwtSOo0_8ei67CDL_148xsoDWpX4efEH1QEbph81GQ_gZ9WWvPfZtzVjsdktyDjCHuz8r7gt2mIbAt3UynrORgUN2Upi6AjZdLiwevlsKTxpBSQGIy7YUspN3aHzMub5O9WGsnYGQuvJmaR8hw"/>
+<!-- Bounding Boxes (Highlights) -->
+<div class="absolute top-[20%] left-[10%] w-[40%] h-[15%] border-2 border-tertiary bg-tertiary/10 rounded-DEFAULT opacity-80 group-hover:opacity-100 transition-opacity flex items-start justify-end p-1 pointer-events-none">
+<span class="font-mono-action text-mono-action text-tertiary-fixed shadow-sm">DATE</span>
+</div>
+<div class="absolute top-[45%] left-[10%] w-[35%] h-[12%] border-2 border-primary bg-primary/10 rounded-DEFAULT opacity-80 group-hover:opacity-100 transition-opacity flex items-start justify-end p-1 pointer-events-none">
+<span class="font-mono-action text-mono-action text-primary-fixed shadow-sm">LOCATION</span>
+</div>
+<!-- Hover overlay action -->
+<div class="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm pointer-events-none">
+<button class="bg-surface-container-high/80 text-on-surface px-4 py-2 rounded-full font-label-caps text-label-caps border border-white/10 backdrop-blur-md pointer-events-auto hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">fullscreen</span> Expand Preview
+                         </button>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-2">
+<div class="px-3 py-1 bg-tertiary/15 text-tertiary font-mono-action text-mono-action rounded-full flex items-center gap-2 border border-tertiary/30">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    AI Extraction Complete
+                </div>
+</div>
+</section>
+<!-- Middle Section: Extracted Intelligence (Bento Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter-grid">
+<!-- Core Details Card -->
+<div class="glass-card rounded-[16px] p-stack-md flex flex-col gap-stack-md md:col-span-2">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-tertiary tracking-widest uppercase">Concert Ticket</span>
+<h2 class="font-display-lg text-display-lg text-on-background">Arctic Monkeys Live at O2</h2>
+</div>
+<div class="bg-surface-container-high px-3 py-1.5 rounded-lg border border-white/5 flex items-center gap-2 cursor-pointer hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-primary text-[18px]">edit</span>
+</div>
+</div>
+<div class="h-[1px] w-full bg-white/10"></div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-md">
+<!-- Date & Time -->
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface-variant">Date &amp; Time</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Friday, Oct 27, 8:00 PM</span>
+</div>
+</div>
+<!-- Order ID -->
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface-variant">Order ID</span>
+<span class="font-mono-action text-mono-action text-on-surface mt-1">#AM-129481</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Location Card -->
+<div class="glass-card rounded-[16px] p-stack-md flex flex-col gap-stack-md relative overflow-hidden group cursor-pointer hover:border-primary/50 transition-colors">
+<div class="flex items-start gap-3 z-10 relative">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface-variant">Location</span>
+<span class="font-body-lg text-body-lg text-on-surface font-semibold">The O2, London</span>
+</div>
+</div>
+<!-- Map Thumbnail -->
+<div class="absolute right-0 top-0 bottom-0 w-1/2 opacity-40 group-hover:opacity-60 transition-opacity z-0 pointer-events-none" data-alt="A stylized digital map of London centering on The O2 arena, dark mode styling with subtle glowing blue routes, high contrast minimalist geographic representation, sleek technical aesthetic, 400x400 pixels." data-location="London" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJultdTeeNkM0SQwl6jhiNM288BxFeCLLc1cgiFLwB52lDdyjtPPhBW21qb6ry-OHt_x4TlSqxX1Pk9RyBk5aS_8CuQln5iVxUXNeiHU6nqa0m_ilrS5fRVhZOzSiSURxfRDNUODzXHWdDX7gEHXNOYmLx-WOrEjogKrE68-RRFw6ieIyX5uoyV0o5aRfe0uazWBcMCvpmu1Sqn5oxgSpjPsO4ECS0spaylgf2KJjJhWHqMo229IKv_w')">
+<div class="absolute inset-0 bg-gradient-to-r from-[rgba(19,27,46,0.4)] to-transparent"></div>
+</div>
+</div>
+<!-- Suggested Actions Card -->
+<div class="glass-card rounded-[16px] p-stack-md flex flex-col justify-center gap-stack-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-1">AI Suggestions</span>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 bg-surface-container-high rounded-full border border-white/5 hover:bg-surface-variant hover:border-primary/30 transition-all font-mono-action text-mono-action flex items-center gap-2 active:scale-95">
+<span class="material-symbols-outlined text-[16px]">share</span> Share Ticket
+                    </button>
+<button class="px-4 py-2 bg-surface-container-high rounded-full border border-white/5 hover:bg-surface-variant hover:border-primary/30 transition-all font-mono-action text-mono-action flex items-center gap-2 active:scale-95">
+<span class="material-symbols-outlined text-[16px]">directions</span> Get Directions
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 w-full z-50 glass-overlay rounded-t-[24px] border-t border-white/10 shadow-2xl pb-safe">
+<div class="flex items-center justify-between p-stack-md gap-4 max-w-3xl mx-auto w-full">
+<button class="flex-1 px-6 py-4 rounded-xl border border-white/10 bg-transparent text-primary hover:bg-surface-variant hover:border-primary/50 transition-all active:scale-95 font-headline-sm text-headline-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">map</span> Open in Maps
+            </button>
+<button class="flex-[1.5] px-6 py-4 rounded-xl bg-inverse-primary text-white hover:bg-primary hover:text-on-primary-container transition-all active:scale-95 shadow-lg shadow-inverse-primary/20 font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event_available</span> Add to Calendar
+            </button>
+</div>
+</div>
+</body></html>
