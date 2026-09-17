@@ -2,8 +2,7 @@
 
 An intelligent web application that extracts actionable entities from screenshots and enables one-tap calendar, map, and task synchronization using the Gemini API.
 
-🔗 **Live Demo:** [Try the Web App](https://swayamshoubinsahoo.github.io/screenshot-to-action-ai/)
-
+🔗 *Live Demo:* [Try the Web App](https://screenshot-action-97538287176.asia-southeast1.run.app/)
 ---
 
 ## ✨ Features
